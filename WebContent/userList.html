@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User List</title>
+
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" />
+
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+	
+	//on load populate table
+	$('#table').dataTable({
+        "ajax": {
+            "url": "http://localhost:8081/StudentMngJson/findAllUser.html",
+            "dataSrc": ""
+        },
+        "columnDefs": [{
+            "defaultContent": "<button>Click!</button>"
+        }],
+        "columns": [
+            { "data": "name" },
+            { "data": "phoneNo" },
+            
+        ]
+    });
+	
+});
+
+
+</script>
+
+
+
+</head>
+<body>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">User List</h3>
+  </div>
+  <div class="panel-body">
+    
+    <table id="table">
+    	<thead>
+	    	<tr>
+	    		<th>Name</th>
+	    		<th>Phone No</th>
+	    	</tr>
+    	</thead>
+    	
+    	<tbody>
+    	
+    	</tbody>
+    	
+    	
+    </table>
+    
+    
+    
+  </div>
+</div>
+
+
+
+</body>
+</html>
